@@ -104,7 +104,10 @@ function createCard(url,id,name,max){
                   div.className = "data";
                   right.className = "right";
                   left.className = "left";
-                  left.innerText = ovalue.charAt(0).toUpperCase() + ovalue.slice(1) ;
+                  let sample = ovalue.charAt(0).toUpperCase() + ovalue.slice(1) ;
+                  if(sample.match(/\d+$/))
+                    sample = sample.toLocaleUpperCase().slice(0,-1);
+                  left.innerText = sample ;
                   if(ext == max-1){
                     let star = edata[ext];
                     star = (star >= 5) ? 5 : star ;
