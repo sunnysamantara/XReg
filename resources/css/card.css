@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+#container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    padding: 0 5px ;
+}
+.box{
+	width: 25%;
+	padding: 2px;
+	margin: 20px;
+	border: 2px solid transparent;
+    background: grey;
+	border-radius: 10px;
+    justify-content: space-around;
+    display: none;
+}
+.box .inner{
+    padding: 1px 1%;
+    width: 100%;
+    display: block;
+	border: 3px solid black;
+    box-shadow: 1px inset;
+    justify-content: center;
+}
+.box .inner .title{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.box .inner .data{
+    width: 100%;
+    border-bottom: 0.5px dotted;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inner .data .right{
+    margin-right: 0.5% ;
+}
+.data .up{
+    color: #1F9CFF;
+	letter-spacing: 0.05em;
+	text-shadow: 1px 1px 0px #d5d5d5, 0 0.5px 2px rgba(0, 0, 0, .5);
+}
+.box .inner .adj{
+	display: flex;
+}
+.image{
+	width: 100%;
+	height: auto;
+}
+@media only screen and (max-width:700px){
+    .box{
+        width: 40%;
+    }
+}
+@media only screen and (max-width:450px){
+    .box{
+        width: 60%;
+    }
+}
+@media only screen and (max-width:300px){
+    .box{
+        width: 80%;
+    }
+}
+@media only screen and (max-width:190px){
+    .box{
+        width: 100%;
+    }
+}
+.inner .inner-con{
+    position: relative; 
+    width: 100%; 
+    float: left; 
+}
+.inner .inner-con .checkbox { 
+	position: absolute; 
+	top: 0px; 
+    right: 0px; 
+}
+.para-check{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 8%;
+    justify-content: space-around;
+    margin-bottom: 3%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.para-check label{
+    padding: 10px;
+}
+.para-check p{
+    border: 0.5px solid black;
+    box-shadow: inset 0 0 0 1px black;
+    background-color: gray;
+    border-radius: 0.5px;
+    line-height: 1.5em;
+    margin: 4px;
+}
+#second, #fourth, #third{
+    display: none;
+}
+
+label, input[type="checkbox"]{
+    cursor: pointer;
+}

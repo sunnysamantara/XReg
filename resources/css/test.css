@@ -1,0 +1,19 @@
+body{
+	background-color: #202020;
+}
+.rating{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: flex;
+}
+.up{
+	color: #1F9CFF;
+	letter-spacing: 0.05em;
+	text-shadow: 4px 4px 0px #d5d5d5, 0 2px 5px rgba(0, 0, 0, .5);
+}
+i{
+	font-size: 50px;
+	color: #010101;
+}

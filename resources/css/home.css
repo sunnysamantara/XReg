@@ -1,0 +1,24 @@
+#shotcut{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+    padding: 0 5%;
+}
+h2{
+    padding: 0 5%;
+    margin-top: 8px;
+}
+.sotcut{
+    padding: 2px;
+    margin: 2px;
+    background-color: #4E9BE0;
+    background-color: #4E9BE0;
+    color: black;
+    border: 1px solid ;
+    box-shadow: 1px 1px #888888;
+    border-radius: 5px;
+}
+#glow{
+    padding: 0 5%;
+}
