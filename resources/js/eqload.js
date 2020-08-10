@@ -4,7 +4,7 @@ function Load(){
   createCheck(url,"1","second","scorestreak");
   createCheck(url,"2","fourth","perk");
   createCheck(url,"3","third","lat");
-  createCard(url,"1","container",8);
+  createCard(url,"1","container",9);
   createCard(url,"2","container",6);
-  createCard(url,"3","container",7);
+  createCard(url,"3","container",8);
 }

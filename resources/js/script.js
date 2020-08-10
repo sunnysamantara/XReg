@@ -1,3 +1,9 @@
+// jshint esnext:true
+/*
+  * Toggle for the main section id "first"
+  * checked : The calling element is checked or not
+  * cname : class of the element to be toggled
+*/
 function hide(checked,cname) {
   cname = "#"+cname;
   if (checked){
@@ -7,7 +13,13 @@ function hide(checked,cname) {
       $(cname).css("display","none");
     }
 }
-
+/*
+  * Create primary set of Checkbox that are hidden by hide function
+  * url : url of the google sheet
+  * id : page of the google sheet
+  * name : id of the parent element to be attached
+  * cname : class of the input same as id of calling class
+*/
 function createCheck(url,id,name,cname){
   drive({sheet:url,tab:id}).then(data => {
     if(data.length){
@@ -43,7 +55,13 @@ function createCheck(url,id,name,cname){
     }
   });
 }
-
+/*
+  * Create card view hierarchy of container >box >inner >inner-con     >image & input .....
+  * url : url of the google sheet
+  * id : page of the google sheet
+  * name : id of the parent element to be attached
+  * max : the total number of coloumn in the google sheet except image
+*/
 function createCard(url,id,name,max){
   drive({sheet:url,tab:id}).then(data => {
       if(data.length){
