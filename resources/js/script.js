@@ -4,6 +4,9 @@
   * checked : The calling element is checked or not
   * cname : class of the element to be toggled
 */
+var dimage = {};
+var simage = {};
+var himage = {};
 function hide(checked,cname) {
   cname = "#"+cname;
   if (checked){
@@ -61,8 +64,9 @@ function createCheck(url,id,name,cname){
   * id : page of the google sheet
   * name : id of the parent element to be attached
   * max : the total number of coloumn in the google sheet except image
+  * rating: show start in card
 */
-function createCard(url,id,name,max){
+function createCard(url,id,name,max,rating=true,rbutton=false){
   drive({sheet:url,tab:id}).then(data => {
       if(data.length){
           data.forEach(items =>{
@@ -72,18 +76,49 @@ function createCard(url,id,name,max){
               box.className = 'box';
               box.id = temp +'-box';
               con.appendChild(box);
-
+              
               let inner = document.createElement('div');
               inner.className = 'inner';
               box.appendChild(inner);
-
+              
               let innerCon = document.createElement('div');
               innerCon.className = 'inner-con';
               inner.appendChild(innerCon);
 
+              if(rbutton){
+                let bin = document.createElement('div');
+                bin.className = "rbutton"
+                let inner_bin = document.createElement('div');
+                for(let i=0; i<4; i++){
+                  let inner_label = document.createElement('label');
+                  let inner_input = document.createElement('input');
+                  inner_input.setAttribute("type","radio");
+                  inner_input.name = "map";
+                  switch(i){
+                    case 0: inner_input.value = 's&d';
+                              inner_label.innerHTML ="&nbsp; S&D &nbsp;";
+                              break;
+                    case 1: inner_input.value = 'hrdpnt';
+                              inner_label.innerHTML ="&nbsp; Hardpoint &nbsp;";
+                              break;
+                    case 2: inner_input.value = 'dom';
+                              inner_label.innerHTML ="&nbsp; Domination &nbsp;";
+                              break;
+                    default: inner_input.value = 'default';
+                              inner_label.innerHTML ="&nbsp; Map &nbsp;";
+                  }
+                  inner_input.className = "inner"+temp ;
+                  inner_bin.appendChild(inner_label);
+                  inner_label.appendChild(inner_input);
+                }
+                bin.appendChild(inner_bin);
+                innerCon.appendChild(bin);
+                
+              }
+
               let img = document.createElement('img');
               img.className = 'image';
-              img.setAttribute("alt","rc");
+              img.setAttribute("alt",temp);
               img.src = items.image ;
               innerCon.appendChild(img);
 
@@ -126,7 +161,7 @@ function createCard(url,id,name,max){
                   if(sample.match(/\d+$/))
                     sample = sample.toLocaleUpperCase().slice(0,-1);
                   left.innerText = sample ;
-                  if(ext == max-1){
+                  if(ext == max-1 && rating){
                     let star = edata[ext];
                     star = (star >= 5) ? 5 : star ;
                     let unstar = 5 - star ;

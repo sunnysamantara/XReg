@@ -87,12 +87,29 @@
 	top: 0px; 
     right: 0px; 
 }
+.inner .inner-con .rbutton{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: .5em ;
+    tab-size: 30;
+    -moz-tab-size: 30;
+}
+.inner-con  .rbutton div {
+    padding: 0 5px;
+    align-items: center;
+    justify-content: center;
+}
+.inner-con  .rbutton label {
+    padding: 0 5px;
+    display: inline-block;
+}
 .para-check{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: 8%;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-bottom: 3%;
     -webkit-user-select: none;
     -moz-user-select: none;
