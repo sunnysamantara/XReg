@@ -92,17 +92,16 @@
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: .5em ;
+    padding: 0 5px;
     tab-size: 30;
     -moz-tab-size: 30;
 }
-.inner-con  .rbutton div {
-    padding: 0 5px;
-    align-items: center;
-    justify-content: center;
-}
-.inner-con  .rbutton label {
-    padding: 0 5px;
-    display: inline-block;
+.inner-con .rbutton button{
+    background-color: black;
+    margin: 2px 5%;
+    padding: 1px 5px;
+    cursor: pointer; 
+    background-color: transparent;
 }
 .para-check{
     display: flex;

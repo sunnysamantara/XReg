@@ -88,30 +88,21 @@ function createCard(url,id,name,max,rating=true,rbutton=false){
               if(rbutton){
                 let bin = document.createElement('div');
                 bin.className = "rbutton"
-                let inner_bin = document.createElement('div');
                 for(let i=0; i<4; i++){
-                  let inner_label = document.createElement('label');
-                  let inner_input = document.createElement('input');
-                  inner_input.setAttribute("type","radio");
-                  inner_input.name = "map";
+                  let button = document.createElement('button');
+                  let text ;
                   switch(i){
-                    case 0: inner_input.value = 's&d';
-                              inner_label.innerHTML ="&nbsp; S&D &nbsp;";
+                    case 0: text = document.createTextNode("S&D"); 
                               break;
-                    case 1: inner_input.value = 'hrdpnt';
-                              inner_label.innerHTML ="&nbsp; Hardpoint &nbsp;";
+                    case 1: text = document.createTextNode("Hardpoint"); 
                               break;
-                    case 2: inner_input.value = 'dom';
-                              inner_label.innerHTML ="&nbsp; Domination &nbsp;";
+                    case 2: text = document.createTextNode("Domination"); 
                               break;
-                    default: inner_input.value = 'default';
-                              inner_label.innerHTML ="&nbsp; Map &nbsp;";
+                    default: text = document.createTextNode("Map"); 
                   }
-                  inner_input.className = "inner"+temp ;
-                  inner_bin.appendChild(inner_label);
-                  inner_label.appendChild(inner_input);
+                 button.appendChild(text);
+                 bin.appendChild(button);
                 }
-                bin.appendChild(inner_bin);
                 innerCon.appendChild(bin);
                 
               }
