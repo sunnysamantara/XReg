@@ -72,7 +72,7 @@ function createCard(url,id,name,max,rating=true,rbutton=false){
           data.forEach(items =>{
               let con = document.getElementById(name);
               let box = document.createElement('div');
-              let temp = items.name.replace(/\s/g,'')
+              let temp = items.name.replace(/\s/g,'');
               box.className = 'box';
               box.id = temp +'-box';
               con.appendChild(box);
@@ -93,21 +93,41 @@ function createCard(url,id,name,max,rating=true,rbutton=false){
                   let text ;
                   switch(i){
                     case 0: text = document.createTextNode("S&D"); 
+                            button.id = temp + "sad";
                               break;
-                    case 1: text = document.createTextNode("Hardpoint"); 
+                    case 1: text = document.createTextNode("Hardpoint");
+                            button.id = temp + "hpoint"; 
                               break;
-                    case 2: text = document.createTextNode("Domination"); 
+                    case 2: text = document.createTextNode("Domination");
+                            button.id = temp + "dom"; 
                               break;
-                    default: text = document.createTextNode("Map"); 
+                    default: text = document.createTextNode("Map");
+                             button.id = temp + "mapd"; 
                   }
                  button.appendChild(text);
                  bin.appendChild(button);
                 }
-                innerCon.appendChild(bin);
                 
+                $(document).on("click",'#'+temp+'sad',function(){
+                  $("#"+temp+"img").attr('src',items.sad);
+                });
+
+                $(document).on("click",'#'+temp+'hpoint',function(){
+                  $("#"+temp+"img").attr('src',items.hpoint);
+                });
+
+                $(document).on("click",'#'+temp+'dom',function(){
+                  $("#"+temp+"img").attr('src',items.dom);
+                });
+
+                $(document).on("click",'#'+temp+'mapd',function(){
+                  $("#"+temp+"img").attr('src',items.image);
+                });
+                innerCon.appendChild(bin);
               }
 
               let img = document.createElement('img');
+              img.id = temp + "img"
               img.className = 'image';
               img.setAttribute("alt",temp);
               img.src = items.image ;
