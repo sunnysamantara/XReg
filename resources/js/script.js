@@ -4,9 +4,6 @@
   * checked : The calling element is checked or not
   * cname : class of the element to be toggled
 */
-var dimage = {};
-var simage = {};
-var himage = {};
 function hide(checked,cname) {
   cname = "#"+cname;
   if (checked){

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/resources/css/img/logo.webp">
     <link rel="stylesheet" text="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" href="/resources/css/card.css">
     <title>Weapon | XReg</title>
 </head>
 <body>
@@ -22,7 +23,41 @@
         <a href="index.html"><img id = "logo" src="/resources/css/img/logo.webp" alt="logo"></a>
     </header>
     <main>
-        
+        <div class="para-check text" id="first">
+            <p><input type="checkbox" id="ass" onchange="hide(this.checked,'second')">
+            <label for="ass">Assault</label></p>
+            <p><input type="checkbox" id="snp" onchange="hide(this.checked,'third')">
+            <label for="snp">Sniper</label></p>
+            <p><input type="checkbox" id="lmg" onchange="hide(this.checked,'fourth')">
+            <label for="lmg">LMG</label></p>
+            <p><input type="checkbox" id="smg" onchange="hide(this.checked,'fifth')">
+            <label for="smg">SMG</label></p>
+            <p><input type="checkbox" id="sg" onchange="hide(this.checked,'sixth')">
+            <label for="sg">Shotgun</label></p>
+            <p><input type="checkbox" id="mrg" onchange="hide(this.checked,'seventh')">
+            <label for="mrg">Marksman Rifle</label></p>
+        </div>
+        <div class="para-check text" id="second" >
+          
+        </div>
+        <div class="para-check text" id="third">
+           
+        </div>
+        <div class="para-check text" id="fourth">
+           
+        </div>
+        <div class="para-check text" id="fifth">
+           
+        </div>
+        <div class="para-check text" id="sixth">
+           
+        </div>
+        <div class="para-check text" id="seventh">
+           
+        </div>
+        <div id="container">
+            
+        </div>
     </main>
     <footer>
         <p>
@@ -34,6 +69,10 @@
             <a href="#"><i class="fab fa-discord"></i></a>
             <a href="https://www.youtube.com/channel/UC4OW75ZPdsKe6-xOfSzNaJA" target="_blank"><i class="fab fa-youtube"></i></a>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/drive-db"></script>
+        <script src="resources/js/script.js"></script>
+        <script src="/resources/js/wpnload.js"></script>
         <script src="https://kit.fontawesome.com/151e012725.js" crossorigin="anonymous"></script>
     </footer>
 </body>
